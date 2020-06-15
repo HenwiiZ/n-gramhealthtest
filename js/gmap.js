@@ -244,7 +244,7 @@ $(document).ready(function() {
                 $('div').remove('.carousel-item');
                 // console.log($('#carousel-inner').html());
                 // $('#carousel-indicators').append('<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>');
-                $('#carousel-inner').append('<div class="carousel-item active"><img  style="display: block; height: 280px; width: 500px" src="https://image.shutterstock.com/image-vector/recommend-icon-thumb-emblem-pink-260nw-1569013396.jpg" class="d-block" alt="0"><div class="carousel-caption d-none d-md-block" ><h5>Point of Interest Recommendation</h5><p></p></div></div>')
+                $('#carousel-inner').append('<div class="carousel-item active" style="width: 100%; height: 150%;"><div style="width: 100%; height: 150%;"><img src="https://image.shutterstock.com/image-vector/recommend-icon-thumb-emblem-pink-260nw-1569013396.jpg"  class="d-block" alt="0" style="display: block; margin: 0 auto; width: 100%; height: 300px;"></div><div class="carousel-caption d-none d-md-block" ><h5">Point of Interest Recommendation</h5><p></p></div></div>')
                 // console.log($('#carousel-inner').html());
                 for(var i = 1; i <= data.length; i++) {
                     var id = data[i - 1].name;
@@ -254,7 +254,7 @@ $(document).ready(function() {
                     var img = data[i - 1].images[0].source_url;
                     console.log(data[i - 1].images[0].source_url);
                     $('#carousel-indicators').append('<li class="slide" data-target="#carouselExampleCaptions" data-slide-to="' + i + '"></li>');
-                    $('#carousel-inner').append('<div class="carousel-item"><div style="width: 100%; height: 150%;"><img src="' + img +'" class="d-block" style="display: block; height: 280px; width: 500px" alt="' + i + '"></div><div class="carousel-caption d-none d-md-block"><h5 class="poi" id="' + id + '">' + id + '</h5><p>Distance: ' + dist + 'm</p></div></div>');
+                    $('#carousel-inner').append('<div class="carousel-item" style="width: 100%; height: 150%;"><div style="width: 100%; height: 150%;"><img src="' + img +'" class="d-block" alt="' + i + '" style="display: block; margin: 0 auto; width: 100%; height: 300px;"></div><div class="carousel-caption d-none d-md-block"><h5 id="' + id + '">' + id + '</h5><p>Distance: ' + dist + 'm</p></div></div>');
                 }
                 console.log('hi');
                 
