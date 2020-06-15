@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" href="css/styles.css">  -->
+        <link rel="stylesheet" href="css/mycss.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        <!-- <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaF3mu3LTpI-OU_wikP8py8bVfYNowCII&callback=initialize"></script> -->
+        <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <script src="https://kit.fontawesome.com/908c810789.js" crossorigin="anonymous"></script>
+        <script src="js/gmap.js"></script>
+        
+    </head>
+    <body class="masthead">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">WHERE TO GO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item " role="presentation">
+                        <a class="nav-link active text-light bg-dark" id="recommend-tab" data-toggle="tab" href="#recommend" role="tab" aria-controls="home" aria-selected="true">Recommendation</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link text-light bg-dark" id="route-tab" data-toggle="tab" href="#route" role="tab" aria-controls="recommend" aria-selected="false">Route</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light bg-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Help
+                        </a>
+                        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item text-light bg-dark" id="help11" data-toggle="modal" data-target="#gudie1">Recommendation Guide</a>
+                            <a class="dropdown-item text-light bg-dark" id="help22"data-toggle="modal" data-target="#guide2">Route Guide</a>
+                        </div>
+                        </li>
+                </ul>
+                <div class="modal fade" id="guide1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content bg-dark ">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-light" id="modalLabel">User Guide</h5>
+                                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>                              
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-light">1. Enter the center you want to go, you could definitely click the compass to track your current location</p>
+                                <br>
+                                <p class="text-light">2. Scroll range bar to control the biggest range from 0 to 40km</p>
+                                <br>
+                                <p class="text-light">3. Click the Place of Interest you like to see the StreetView</p>
+                                <br>
+                                <p class="text-light">4. Click search icon at top right to navigate to Youtube</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="guide2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content bg-dark">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-light" id="modalLabel">User Guide</h5>
+                                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>                              
+                            </div>
+                            <div class="modal-body text-light">
+                                <p>Enter your origin and destination to find the route between them.</p>
+                                <p>Track yourself: Switch the origin to your current location</p>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="col-1 ">
+                                            <div class="border border-light rounded d-table" style="width: 6%; height: 6%;">
+                                                <p class="d-table-cell align-middle text-center">Help</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="border border-light rounded d-table" style="width: 130%; height: 200%;">
+                                                <p class="d-table-cell align-middle text-center">Map Canvas <br><br> Default: Your Current Location</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4" style="margin-left: 6%;">
+                                            <div class="border border-light rounded d-table" style="width: 130%; height: 200%;">
+                                                <p class="d-table-cell align-middle text-center" >StreetView Canvas <br><br> Default: Your Current StreetView</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row h-20" style="margin-top: 15%;">
+                                        <div class="col-1" style="margin-right: 3%;"></div>
+                                        <div class="col-1" >
+                                            <div class="border border-light rounded d-table" style="width: 9%; height: 100%;">
+                                                <p class="d-table-cell align-middle text-center">Track Yourself</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4" style="padding-left: 6%;">
+                                            <div class="border border-light rounded d-table" style="width: 100%; height: 100%;">
+                                                <p class="d-table-cell align-middle text-center">Enter your Origin</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="border border-light rounded d-table" style="width: 100%; height: 100%;">
+                                                <p class="d-table-cell align-middle text-center">Enter your Destination</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-1">
+                                            <div class="border border-light rounded d-table" style="width: 9%; height: 100%;">
+                                                <p class="d-table-cell align-middle text-center">Confirm</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" id="search-box" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0 fas fa-search" type="button" id="search-btn"></button>
+                    </form>                                        
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content 1: -->
+        <div class="tab-content" id="myTabContent">
+            <!-- First tab -->
+            <div class="tab-pane fade show active" id="recommend" role="tabpanel" aria-labelledby="recommend-tab">
+                <div class="container-fluid"  id="recommend-container">
+                <!-- <div class="container-fluid"  style="padding: 0%; margin: 0%; border: 0%;" id="recommend-container"> -->
+                    <!-- <div class="row">
+                        <div class="col" style="height: 10px;"></div>
+                    </div> -->
+
+                    <div class="row" style="margin-top: 1%;">
+                        <div class="col-2"></div>
+                        <div class="col-3">
+                            <div class="row" style="margin-top: 30px;">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-dark text-light" id="place-name">place</span>
+                                    </div>
+                                    <input type="text" id="place" class="form-control bg-dark text-light" placeholder="Place" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 30px;">
+                                <label for="formControlRange" class="text-light">0 - 40km</label>
+                                <input type="range" class="custom-range" id="range">
+                            </div>
+                            <div class="row" style="margin-top: 30px; display: block; text-align: center;">
+                                <!-- <button type="button" class="btn btn-dark fas fa-check fa-3x"></button> -->
+                                <div class="btn-group-lg" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-dark mb-2 fas fa-compass fa-2x"></button>
+                                    <button type="button" class="btn btn-dark mb-2 fas fa-check fa-2x" id="confirm2"></button>
+                                    <!-- <button type="button" class="btn btn-dark"></button> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-1"></div>
+                        <div class="col-4 p-1 bg-dark rounded" style="width: 90%; height: 100%;margin-bottom: 0%;">
+                            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" id="carousel-slide">
+                                <ol class="carousel-indicators" id="carousel-indicators">
+                                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                                </ol>
+                                <div class="carousel-inner" id="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div style="width: 100%; height: 150%;">
+                                            <img src="https://image.shutterstock.com/image-vector/recommend-icon-thumb-emblem-pink-260nw-1569013396.jpg"  class="d-block" alt="0" style="display: block; margin: 0 auto;">
+                                        </div>
+                                        
+                                        <div class="carousel-caption d-none d-md-block" >
+                                            <h5">Point of Interest Recommendation</h5>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-2"></div>
+                    </div>
+
+                    <div class="row" style="margin-top: 1%;">
+                        <div class="col-2" style="padding: 0%;"></div>
+                        <div class="col-4" style="padding: 0%;">
+                            <div style="height: 400%; width: 98%; padding-right: 2%;" class="border border-dark rounded shadow p-3 mb-5 bg-dark rounded" id="map2"></div>
+                        </div>
+                        <div class="col-4" style="padding: 0%;">
+                            <div style="height: 400%; width: 98%; padding-left: 2%" class="border border-dark rounded shadow p-3 mb-5 bg-dark rounded" id="pano2"></div>
+                        </div>
+                        <div class="col-2" style="padding: 0%;"></div>
+                    </div>
+
+                </div>               
+            </div>
+
+            <!-- Second Tab -->
+
+
+            <div class="tab-pane fade" id="route" role="tabpanel" aria-labelledby="home-tab">
+                <div class="container-fluid" id="home-container">
+                <!-- <div class="container-fluid" style="padding: 0%; margin: 0%; border: 0%;" id="home-container"> -->
+                    <div class="row">
+                        <div class="col" style="height: 50px;"></div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-2" style="padding: 0%;"></div>
+
+                        <!-- Google Map Canvas -->
+                        <div class="col-4">
+                            <div style="height: 1000%; width: 100%;" id="map" class="border border-dark rounded shadow p-3 bg-dark rounded"></div>
+                        </div>
+
+                        <!-- Google Street View Canvas -->
+                        <div class="col-4" style="padding: 0%;">
+                            <div style="height: 1000%; width: 100%;" id="pano" class="border border-dark rounded shadow p-3 bg-dark rounded"></div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col" style="height: 50px;"></div>
+                    </div>
+        
+                    <div class="row" style="margin-top: 20%;">
+                        <div class="col-3"></div>
+
+                        <!-- Origin and destination form  -->
+                        <div class="col-7">
+                            <form class="form-inline">
+                                <!-- Track yourself button -->
+                                <button type="button" id="track" class="btn btn-dark mb-2 fas fa-compass fa-2x"></button>
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text bg-dark text-light" id="origin-name">Origin</span>
+                                    </div>
+                                    <input type="search" class="form-control bg-dark text-light" name="origin" id="origin" placeholder="">
+                                </div>
+                                -
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text bg-dark text-light" id="destination-name">Destination</span>
+                                    </div>
+                                    <input type="search" class="form-control bg-dark text-light" name="destination" id="destination" placeholder="">
+                                </div>
+                                <button type="button" class="btn btn-dark mb-2" id="confirm">Confirm</button>
+                            </form>
+                        </div>
+                        <!-- <div class="col-2"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

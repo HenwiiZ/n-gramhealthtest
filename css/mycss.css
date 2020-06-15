@@ -1,0 +1,10 @@
+.masthead {
+    /* height: auto;
+    width: auto; */
+    background-image: url("../assets/img/bg-masthead.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center;
+    min-height: 35rem;
+    background-attachment: fixed
+  }
