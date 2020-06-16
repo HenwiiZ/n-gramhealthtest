@@ -2,7 +2,20 @@
 
 Link: https://henwiiz.github.io/n-gramhealthtest/
 
-[toc]
+<!-- GFM-TOC -->
+
+- [Introduction](#Introduction)
+- [Architecture](#Architecture)
+  - [Overall](#Overall)
+  - [Front-End](#Front-End)
+  - [API](#API)
+  - [Back-End](#Back-End)
+- [Workflow](#Workflow)
+- [Demo-Screenshot](#Demo-Screenshot)
+- [Future-Work](#Future-Work)
+- [Contact-Me](#Contact-Me)
+
+<!-- GFM-TOC -->
 
 ## Introduction
 
@@ -37,7 +50,7 @@ Link: https://henwiiz.github.io/n-gramhealthtest/
 
     Bottom right contains a canvas for Google StreetView placement.
 
-    ![image-20200615204904914](../assets/img/frontend1.jpg)
+    ![image-20200615204904914](https://github.com/HenwiiZ/n-gramhealthtest/blob/master/assets/img/frontend1.jpg)
 
   - Route Planning Page: 
 
@@ -47,7 +60,7 @@ Link: https://henwiiz.github.io/n-gramhealthtest/
 
     Second row contains a track button , origin input box, destination input box and a confirm button.
 
-    ![image-20200615222129200](../assets/img/frontend2.jpg)
+    ![image-20200615222129200](https://github.com/HenwiiZ/n-gramhealthtest/blob/master/assets/img/frontend2.jpg)
 
     
 
@@ -104,7 +117,7 @@ The APIs invoked in this application are from two source: Google Map and Triposo
 
 
 
-![image-20200615195601470](../assets/img/workflow.jpg)
+![image-20200615195601470](https://github.com/HenwiiZ/n-gramhealthtest/blob/master/assets/img/workflow.jpg)
 
 
 
@@ -112,17 +125,17 @@ First, user could enter their expected center point as origin and limit the sear
 
 
 
-## Demo Screenshot
+## Demo-Screenshot
 
-![image-20200615234210813](../assets/img/demo1.jpg)
+![image-20200615234210813](https://github.com/HenwiiZ/n-gramhealthtest/blob/master/assets/img/demo1.jpg)
 
-![image-20200615234233944](../assets/img/demo2.jpg)
+![image-20200615234233944](https://github.com/HenwiiZ/n-gramhealthtest/blob/master/assets/img/demo2.jpg)
 
-![image-20200615234306884](../assets/img/demo3.jpg)
+![image-20200615234306884](https://github.com/HenwiiZ/n-gramhealthtest/blob/master/assets/img/demo3.jpg)
 
 
 
-## Future Work
+## Future-Work
 
 "Where to go" aims to be a highly-integrated travel tips application. Since I want it to be as all-embracing and easy-to-use as possible for users, I think there should be a long way for its improvement. Those future features could be divided into three different types:
 
@@ -138,6 +151,6 @@ First, user could enter their expected center point as origin and limit the sear
 
 
 
-## Contact Me
+## Contact-Me
 
 Email: hz2620@columbia.edu
