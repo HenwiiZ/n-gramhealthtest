@@ -238,7 +238,7 @@ $(document).ready(function() {
                 $('div').remove('.carousel-item');
                 // console.log($('#carousel-inner').html());
                 // $('#carousel-indicators').append('<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>');
-                $('#carousel-inner').append('<div class="carousel-item active" style="width: 100%; height: 150%;"><div style="width: 100%; height: 150%;"><img src="https://image.shutterstock.com/image-vector/recommend-icon-thumb-emblem-pink-260nw-1569013396.jpg"  class="d-block" alt="0" style="display: block; margin: 0 auto; width: 100%; height: 300px;"></div><div class="carousel-caption d-none d-md-block" ><h5">Point of Interest Recommendation</h5><p></p></div></div>')
+                $('#carousel-inner').append('<div class="carousel-item active" style="width: 100%; height: 150%;"><div style="width: 100%; height: 150%;"><img src="assets/img/thumbnail.jpg"  class="d-block" alt="0" style="display: block; margin: 0 auto; width: 100%; height: 300px;"></div><div class="carousel-caption d-none d-md-block" ><h5">Point of Interest Recommendation</h5><p></p></div></div>')
                 // console.log($('#carousel-inner').html());
                 for(var i = 1; i <= data.length; i++) {
                     var id = data[i - 1].name;
