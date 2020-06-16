@@ -8,12 +8,6 @@ $(document).ready(function() {
     var directionsService ;
     var directionsRenderer ;
 
-    // $(function(){
-    //     var $2 = $.noConflict();
-    //     var version = $.fn.jquery ;
-    //     var version2 = $2.fn.jquery ;
-    // });
-
     //Get current location
     var initLoc = function() {
         if(navigator.geolocation) {
